@@ -1,0 +1,23 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1759014623
+bad guy easy.png::CompressedTexture2D::2595225092037585032::1759014467::1759014623::1::::<><><>0<>0<>44008bbf340fd3fbdedb93259941d6d0<>res://.godot/imported/bad guy easy.png-eccb7492b8f88c501d363b294fd2acdb.ctex::
+bad guy hard.png::CompressedTexture2D::6239654688729194945::1759014467::1759014623::1::::<><><>0<>0<>97103da1d4ed7ada6ea6168127d505e3<>res://.godot/imported/bad guy hard.png-5c2d05f6dbb51173223d7b9c64aab911.ctex::
+bad guy medium.png::CompressedTexture2D::2798069480972602918::1759014467::1759014623::1::::<><><>0<>0<>91512d0e05d55efe8c83ad546a36a0f4<>res://.godot/imported/bad guy medium.png-972da18a35a7479ce5c119236f869050.ctex::
+death animation.png::CompressedTexture2D::7193839183314498808::1759014467::1759014623::1::::<><><>0<>0<>105e1e3d98284aad5c32f5dca383edf6<>res://.godot/imported/death animation.png-973a470c03539374eb5d530c918ef656.ctex::
+easy enemy with healthbar.png::CompressedTexture2D::533608042235939840::1759014467::1759014623::1::::<><><>0<>0<>ad8893fe464e8ddae7745517d583346f<>res://.godot/imported/easy enemy with healthbar.png-dadc21da81dddec61c06e25543423973.ctex::
+game over.png::CompressedTexture2D::7657838116360577220::1759014467::1759014623::1::::<><><>0<>0<>b04d31f83acef32b57d612acd7f0edad<>res://.godot/imported/game over.png-013e72f7593cc7aefd986572232b7232.ctex::
+hard enemy with healthbar.png::CompressedTexture2D::6873302214359003048::1759014467::1759014623::1::::<><><>0<>0<>d2db60dd2406494326c175e0ba10b084<>res://.godot/imported/hard enemy with healthbar.png-b00b6b32dd1e4cd2d04e68b8ca6ccc9f.ctex::
+icon.svg::CompressedTexture2D::1354375255165979247::1758996954::1759014623::1::::<><><>0<>0<>230b9f1fc76d9e4875c30f78b95955a1<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+idle position.png::CompressedTexture2D::5617140633776607094::1759014467::1759014623::1::::<><><>0<>0<>4d2856450fda19646f474bad3a4f8aa0<>res://.godot/imported/idle position.png-ff27e195c37e5e613812ab6a3a88e223.ctex::
+main character attack 1.png::CompressedTexture2D::7211095911961254559::1759014467::1759014623::1::::<><><>0<>0<>ca309127b651d80b67870a6063ee9f8c<>res://.godot/imported/main character attack 1.png-c9cd52292c4487d4acbf476f60821571.ctex::
+medium enemy with healthbar.png::CompressedTexture2D::4745519848072798984::1759014467::1759014623::1::::<><><>0<>0<>34848cc727a89e9dd2b4cec52d94a26a<>res://.godot/imported/medium enemy with healthbar.png-6e2868cdf70c87ea4586ad8816f44f6c.ctex::
+time bar.png::CompressedTexture2D::4381666468825952761::1759014467::1759014623::1::::<><><>0<>0<>7ab6404158a562ab27c3e0d06306e82c<>res://.godot/imported/time bar.png-ef1f06f4d3c61b5b0893fd2ac95968e8.ctex::
+::res://Assets/::1759014563
+idle position.png::CompressedTexture2D::3805502143268065643::1759006835::1759014623::1::::<><><>0<>0<>dfdd4d792b7d4d7c60e6d894c7440d23<>res://.godot/imported/idle position.png-30b3a00730cd14c2d0d8235eab4c6e96.ctex::
+spr_torch.png::CompressedTexture2D::5304278007985824041::1563488620::1759014623::1::::<><><>0<>0<>55c5015abfb154a120f1544fdcd05f92<>res://.godot/imported/spr_torch.png-bf790e073a99691fd2dbe4683257844c.ctex::
+Tilesetv3.png::CompressedTexture2D::3828175469754284967::1563488888::1759014623::1::::<><><>0<>0<>65a2b1838bbcea6b397488474c898c1f<>res://.godot/imported/Tilesetv3.png-a0a5e81e846e19473dbb8ac08d095d30.ctex::
+::res://Scenes/::1759014563
+game.tscn::PackedScene::9179887345559707024::1759014385::0::1::::<><><>0<>0<><>::uid://boa1vxvn8kvh4::::res://Scenes/player.tscn<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png
+player.tscn::PackedScene::3370681879222608543::1759010793::0::1::::<><><>0<>0<><>::uid://omjdt5236iic::::res://Scripts/player.gd<>uid://buhocgluf06ep::::res://Assets/idle position.png
+::res://Scripts/::1759014563
+player.gd::GDScript::1007969199850970570::1759007842::0::1::::<>CharacterBody2D<><>0<>0<><>::
