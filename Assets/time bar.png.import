@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhdrqfbr4qrge"
-path="res://.godot/imported/game over.png-013e72f7593cc7aefd986572232b7232.ctex"
+uid="uid://b3orn28554tkr"
+path="res://.godot/imported/time bar.png-32ce4a239a0b5f30a479cf20970254ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game over.png"
-dest_files=["res://.godot/imported/game over.png-013e72f7593cc7aefd986572232b7232.ctex"]
+source_file="res://Assets/time bar.png"
+dest_files=["res://.godot/imported/time bar.png-32ce4a239a0b5f30a479cf20970254ca.ctex"]
 
 [params]
 

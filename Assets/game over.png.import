@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu5sg3p8btdi4"
-path="res://.godot/imported/bad guy hard.png-5c2d05f6dbb51173223d7b9c64aab911.ctex"
+uid="uid://dhdrqfbr4qrge"
+path="res://.godot/imported/game over.png-a96f829e7b619bba0d5ab8905a25f72d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bad guy hard.png"
-dest_files=["res://.godot/imported/bad guy hard.png-5c2d05f6dbb51173223d7b9c64aab911.ctex"]
+source_file="res://Assets/game over.png"
+dest_files=["res://.godot/imported/game over.png-a96f829e7b619bba0d5ab8905a25f72d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf4n2bwif0ngo"
-path="res://.godot/imported/bad guy medium.png-972da18a35a7479ce5c119236f869050.ctex"
+uid="uid://c46qjvpt4d7iq"
+path="res://.godot/imported/hard enemy with healthbar.png-aabece461387b93f80b64144ea8447d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bad guy medium.png"
-dest_files=["res://.godot/imported/bad guy medium.png-972da18a35a7479ce5c119236f869050.ctex"]
+source_file="res://Assets/hard enemy with healthbar.png"
+dest_files=["res://.godot/imported/hard enemy with healthbar.png-aabece461387b93f80b64144ea8447d0.ctex"]
 
 [params]
 

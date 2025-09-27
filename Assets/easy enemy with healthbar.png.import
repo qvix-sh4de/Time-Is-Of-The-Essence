@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cma8qrkumm2v7"
-path="res://.godot/imported/idle position.png-ff27e195c37e5e613812ab6a3a88e223.ctex"
+uid="uid://huqpgfaxu6fk"
+path="res://.godot/imported/easy enemy with healthbar.png-b54cb9347f389071f0738b68ddca6123.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://idle position.png"
-dest_files=["res://.godot/imported/idle position.png-ff27e195c37e5e613812ab6a3a88e223.ctex"]
+source_file="res://Assets/easy enemy with healthbar.png"
+dest_files=["res://.godot/imported/easy enemy with healthbar.png-b54cb9347f389071f0738b68ddca6123.ctex"]
 
 [params]
 

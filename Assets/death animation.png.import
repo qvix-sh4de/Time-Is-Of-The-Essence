@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc8e8ixgsn8wq"
-path="res://.godot/imported/bad guy easy.png-eccb7492b8f88c501d363b294fd2acdb.ctex"
+uid="uid://daq0qlil0c55e"
+path="res://.godot/imported/death animation.png-7d7013ebd9a5470bab188c5c1faf9f9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bad guy easy.png"
-dest_files=["res://.godot/imported/bad guy easy.png-eccb7492b8f88c501d363b294fd2acdb.ctex"]
+source_file="res://Assets/death animation.png"
+dest_files=["res://.godot/imported/death animation.png-7d7013ebd9a5470bab188c5c1faf9f9a.ctex"]
 
 [params]
 
