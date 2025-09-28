@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Time Is Of The Essence"
-run/main_scene="uid://d312nyktjs0ue"
+run/main_scene="uid://dhx660ywnfh78"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Assets/icon.svg"
+
+[autoload]
+
+GlobalVars="*res://global_vars.gd"
 
 [global_group]
 

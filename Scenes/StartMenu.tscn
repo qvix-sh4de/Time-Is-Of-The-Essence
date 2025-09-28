@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhx660ywnfh78"]
+
+[ext_resource type="Script" uid="uid://cvfpri8k3gbtj" path="res://Scenes/start_menu.gd" id="1_dvnd1"]
+
+[node name="CreateStartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dvnd1")

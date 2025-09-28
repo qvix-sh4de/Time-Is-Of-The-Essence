@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm5rsj5lrwfyw"]
+
+[ext_resource type="Script" uid="uid://mmtnsvdwwnnc" path="res://Scenes/how_to_play.gd" id="1_wbcyv"]
+
+[node name="HowToPlay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wbcyv")
