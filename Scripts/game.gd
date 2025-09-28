@@ -74,6 +74,7 @@ func setup_ui():
 	enemy_label.add_theme_font_size_override("font_size", 40)  # 2x larger
 	enemy_label.text = "ENEMIES: 0/2"
 	ui_container.add_child(enemy_label)
+	
 func _process(delta):
 	# Countdown timer
 	if is_game_running and game_time > 0:
@@ -117,10 +118,6 @@ func apply_time_penalty(penalty_type: String):
 	
 	flash_timer()
 	print("Time penalty: -%.1fs | Remaining: %.1fs" % [penalty, game_time])
-	game_time = max(0, game_time - penalty)
-	flash_timer()
-	print("Time penalty: -%.1fs | Remaining: %.1fs" % [penalty, game_time])
-
 func enemy_defeated():
 	enemies_defeated += 1
 	bounce_enemy_counter()
