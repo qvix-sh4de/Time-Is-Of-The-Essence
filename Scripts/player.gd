@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed: float = 200.0
-@export var jump_velocity: float = -300.0
+@export var jump_velocity: float = -350.0
 @export var acceleration: float = 800.0
 @export var friction: float = 1000.0
 @export var attack_range: float = 50.0
@@ -19,6 +19,7 @@ var main_game: Node2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var collision_shape = $CollisionShape2D
 @onready var hit_timer = Timer.new()
+
 
 func _ready():
 	add_to_group("player")
