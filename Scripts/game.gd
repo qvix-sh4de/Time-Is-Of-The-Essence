@@ -40,10 +40,10 @@ func setup_ui():
 	ui_container = CanvasLayer.new()
 	add_child(ui_container)
 	
-	# Battery sprite
+	# Battery sprite - scaled 2x larger
 	battery_sprite = AnimatedSprite2D.new()
-	battery_sprite.position = Vector2(30, 35)
-	battery_sprite.scale = Vector2(1.5, 1.5)
+	battery_sprite.position = Vector2(60, 70)
+	battery_sprite.scale = Vector2(3.0, 3.0)  # 2x larger than before
 	ui_container.add_child(battery_sprite)
 	
 	# Load battery animation
@@ -54,27 +54,26 @@ func setup_ui():
 	else:
 		print("No battery animation found - using timer only")
 	
-	# Timer display next to battery
+	# Timer display - 2x larger font
 	time_label = Label.new()
-	time_label.position = Vector2(100, 20)
-	time_label.add_theme_font_size_override("font_size", 28)
+	time_label.position = Vector2(200, 40)
+	time_label.add_theme_font_size_override("font_size", 56)  # 2x larger
 	time_label.text = "02:00"
 	ui_container.add_child(time_label)
 	
-	# Level display
+	# Level display - 2x larger font
 	level_label = Label.new()
-	level_label.position = Vector2(20, 70)
-	level_label.add_theme_font_size_override("font_size", 20)
+	level_label.position = Vector2(40, 140)
+	level_label.add_theme_font_size_override("font_size", 40)  # 2x larger
 	level_label.text = "LEVEL: 1/20"
 	ui_container.add_child(level_label)
 	
-	# Enemy progress
+	# Enemy progress - 2x larger font
 	enemy_label = Label.new()
-	enemy_label.position = Vector2(20, 95)
-	enemy_label.add_theme_font_size_override("font_size", 20)
+	enemy_label.position = Vector2(40, 190)
+	enemy_label.add_theme_font_size_override("font_size", 40)  # 2x larger
 	enemy_label.text = "ENEMIES: 0/2"
 	ui_container.add_child(enemy_label)
-
 func _process(delta):
 	# Countdown timer
 	if is_game_running and game_time > 0:
@@ -111,6 +110,13 @@ func apply_time_penalty(penalty_type: String):
 		_:
 			penalty = 5.0
 	
+	game_time = max(0.0, game_time - penalty)
+	
+	# Fix floating point precision issues by rounding to 1 decimal place
+	game_time = round(game_time * 10.0) / 10.0
+	
+	flash_timer()
+	print("Time penalty: -%.1fs | Remaining: %.1fs" % [penalty, game_time])
 	game_time = max(0, game_time - penalty)
 	flash_timer()
 	print("Time penalty: -%.1fs | Remaining: %.1fs" % [penalty, game_time])
@@ -176,12 +182,16 @@ func reset_all_entities():
 	print("All entities reset to starting positions!")
 
 func game_over():
-	is_game_running = false
-	time_label.modulate = Color.RED
-	print("GAME OVER!")
-	print("Final Level: %d" % current_level)
-	print("Press R to restart")
-
+	print("TIME'S UP! Auto-restarting level...")
+	
+	# Auto-restart instead of stopping
+	restart_level()
+	
+	# Brief visual feedback that time ran out
+	if time_label:
+		time_label.modulate = Color.RED
+		var tween = create_tween()
+		tween.tween_property(time_label, "modulate", Color.WHITE, 1.0)
 func game_won():
 	print("CONGRATULATIONS!")
 	print("You completed all 20 levels!")

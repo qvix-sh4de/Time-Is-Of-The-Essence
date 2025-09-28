@@ -82,14 +82,14 @@ func attack():
 		main_game.apply_time_penalty("hit")
 		print("Attack cost 5 seconds!")
 	
-	# Simple area-based attack - check all enemies in scene
+	# Reduced attack range to match enemy attack range (50 pixels)
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	print("Checking ", enemies.size(), " enemies for hits")
 	
 	for enemy in enemies:
 		var distance = global_position.distance_to(enemy.global_position)
 		
-		if distance < 80:  # Attack range
+		if distance < 50:  # Changed from 80 to 50 (same as enemy attack range)
 			print("ENEMY HIT!")
 			if enemy.has_method("take_damage"):
 				enemy.take_damage(1)
