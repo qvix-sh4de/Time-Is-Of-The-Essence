@@ -1,6 +1,6 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1759014863
-::res://Assets/::1759014863
+::res://::1759016771
+::res://Assets/::1759016814
 bad guy easy.png::CompressedTexture2D::2595225092037585032::1759014467::1759014863::1::::<><><>0<>0<>9003cef6bb931aa61f0899da8f9f6989<>res://.godot/imported/bad guy easy.png-4a73901f229295f366ed1ee95adbe9ef.ctex::
 bad guy hard.png::CompressedTexture2D::6239654688729194945::1759014467::1759014863::1::::<><><>0<>0<>e7a4a5056bc5d7ac6c531e18153b50e1<>res://.godot/imported/bad guy hard.png-913c67763934c9820b24660e168390ee.ctex::
 bad guy medium.png::CompressedTexture2D::2798069480972602918::1759014467::1759014863::1::::<><><>0<>0<>ef22cb1bf90247ba9f2eb892de41685e<>res://.godot/imported/bad guy medium.png-987b33e21343fb091399197b5f586929.ctex::
@@ -15,8 +15,15 @@ medium enemy with healthbar.png::CompressedTexture2D::4745519848072798984::17590
 spr_torch.png::CompressedTexture2D::5304278007985824041::1563488620::1759014623::1::::<><><>0<>0<>55c5015abfb154a120f1544fdcd05f92<>res://.godot/imported/spr_torch.png-bf790e073a99691fd2dbe4683257844c.ctex::
 Tilesetv3.png::CompressedTexture2D::3828175469754284967::1563488888::1759014623::1::::<><><>0<>0<>65a2b1838bbcea6b397488474c898c1f<>res://.godot/imported/Tilesetv3.png-a0a5e81e846e19473dbb8ac08d095d30.ctex::
 time bar.png::CompressedTexture2D::4381666468825952761::1759014467::1759014863::1::::<><><>0<>0<>9634c65d7ca39297b6dc4369b59e222e<>res://.godot/imported/time bar.png-32ce4a239a0b5f30a479cf20970254ca.ctex::
-::res://Scenes/::1759014725
-game.tscn::PackedScene::9179887345559707024::1759014720::0::1::::<><><>0<>0<><>::uid://boa1vxvn8kvh4::::res://Scenes/player.tscn<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png
-player.tscn::PackedScene::3370681879222608543::1759010793::0::1::::<><><>0<>0<><>::uid://omjdt5236iic::::res://Scripts/player.gd<>uid://buhocgluf06ep::::res://Assets/idle position.png
-::res://Scripts/::1759014563
-player.gd::GDScript::1007969199850970570::1759007842::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://Assets/Normal.band/::1759016814
+::res://Assets/Normal.band/Caches.nosync/::1759016814
+::res://Assets/Normal.band/Contents/::1759016814
+::res://Assets/Normal.band/Media/::1759016814
+::res://Assets/Normal.band/Output/::1759016814
+arrange_screenshot.png::CompressedTexture2D::9141705001203514632::1759016814::1759016815::1::::<><><>0<>0<>71f2d7537639c368ea076f541d39be41<>res://.godot/imported/arrange_screenshot.png-d887c796790b8fd6423d9c0587491701.ctex::
+arrange_screenshot_big.png::CompressedTexture2D::3645931221178631717::1759016814::1759016815::1::::<><><>0<>0<>3f83913b49b811f3906cf8aee04f497c<>res://.godot/imported/arrange_screenshot_big.png-446b1bdbc679691be5b9d57c509954d7.ctex::
+::res://Scenes/::1759016069
+game.tscn::PackedScene::9179887345559707024::1759016069::0::1::::<><><>0<>0<><>::uid://boa1vxvn8kvh4::::res://Scenes/player.tscn<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png
+player.tscn::PackedScene::3370681879222608543::1759015307::0::1::::<><><>0<>0<><>::uid://omjdt5236iic::::res://Scripts/player.gd<>uid://cma8qrkumm2v7::::res://Assets/idle position.png
+::res://Scripts/::1759016069
+player.gd::GDScript::1007969199850970570::1759016069::0::1::::<>CharacterBody2D<><>0<>0<><>::
