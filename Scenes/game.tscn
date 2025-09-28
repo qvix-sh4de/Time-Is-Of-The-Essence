@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://d312nyktjs0ue"]
+[gd_scene load_steps=8 format=4 uid="uid://d312nyktjs0ue"]
 
+[ext_resource type="Script" uid="uid://ceqqvcxqq1alt" path="res://Scenes/game.gd" id="1_3dryh"]
 [ext_resource type="PackedScene" uid="uid://boa1vxvn8kvh4" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://busnqxh26d3pr" path="res://Assets/Tilesetv3.png" id="2_qxrlw"]
 [ext_resource type="AudioStream" uid="uid://c272gm0d263gg" path="res://Assets/Normal.wav" id="3_wrm1d"]
@@ -876,7 +877,11 @@ texture = ExtResource("2_qxrlw")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_wrm1d")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dryh"]
+size = Vector2(41, 120)
+
 [node name="Game" type="Node2D"]
+script = ExtResource("1_3dryh")
 
 [node name="Layer1" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -898,3 +903,12 @@ position = Vector2(-6, 1)
 stream = ExtResource("3_wrm1d")
 autoplay = true
 max_distance = 100000000.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(59, 73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(698.5, 62)
+shape = SubResource("RectangleShape2D_3dryh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
