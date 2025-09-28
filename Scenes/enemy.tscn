@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://442v3jolrobb"]
+[gd_scene load_steps=4 format=3 uid="uid://c5yichobaxbr8"]
 
-[ext_resource type="Script" uid="uid://cuyos1q88najh" path="res://Scenes/enemy.gd" id="1_4gyqm"]
+[ext_resource type="Script" uid="uid://b1f5i4grgisvb" path="res://Scripts/enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://bc8e8ixgsn8wq" path="res://Assets/bad guy easy.png" id="2_4gyqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(6, 20)
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

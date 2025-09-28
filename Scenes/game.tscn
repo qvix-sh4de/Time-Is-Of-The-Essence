@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=4 uid="uid://d312nyktjs0ue"]
 
-[ext_resource type="Script" uid="uid://ceqqvcxqq1alt" path="res://Scenes/game.gd" id="1_3dryh"]
+[ext_resource type="Script" uid="uid://ceqqvcxqq1alt" path="res://Scripts/game.gd" id="1_3dryh"]
 [ext_resource type="PackedScene" uid="uid://boa1vxvn8kvh4" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://busnqxh26d3pr" path="res://Assets/Tilesetv3.png" id="2_qxrlw"]
 [ext_resource type="AudioStream" uid="uid://c272gm0d263gg" path="res://Assets/Normal.wav" id="3_wrm1d"]
-[ext_resource type="PackedScene" uid="uid://442v3jolrobb" path="res://Scenes/enemy.tscn" id="4_wowpa"]
+[ext_resource type="PackedScene" uid="uid://c5yichobaxbr8" path="res://Scenes/enemy.tscn" id="4_wowpa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("2_qxrlw")
