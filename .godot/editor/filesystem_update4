@@ -1,3 +1,2 @@
 res://Scripts/player.gd
-res://Scenes/player.tscn
-res://Scenes/player_animation.gd
+res://Scenes/game.tscn
