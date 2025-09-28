@@ -893,6 +893,7 @@ sources/0 = SubResource("TileSetAtlasSource_r87c2")
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+visible = false
 position = Vector2(-8.999992, -13.999939)
 scale = Vector2(27.127981, 16.937109)
 texture = ExtResource("1_r87c2")
@@ -904,6 +905,11 @@ use_parent_material = true
 tile_set = SubResource("TileSet_abj4a")
 
 [node name="Layer1" type="TileMapLayer" parent="."]
+use_parent_material = true
+position = Vector2(59, 73)
+tile_set = SubResource("TileSet_a58it")
+
+[node name="Layer2" type="TileMapLayer" parent="."]
 use_parent_material = true
 position = Vector2(59, 73)
 tile_set = SubResource("TileSet_a58it")

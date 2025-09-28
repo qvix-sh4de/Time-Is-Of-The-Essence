@@ -907,3 +907,8 @@ tile_set = SubResource("TileSet_8bihy")
 use_parent_material = true
 position = Vector2(59, 73)
 tile_set = SubResource("TileSet_dy1rv")
+
+[node name="Layer2" type="TileMapLayer" parent="."]
+use_parent_material = true
+position = Vector2(59, 73)
+tile_set = SubResource("TileSet_dy1rv")
