@@ -1,7 +1,8 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1759050129
+::res://::1759052305
 player_animation.gd::GDScript::8894309316799209679::1759042322::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
-::res://Assets/::1759050294
+Room File Blank.tscn::PackedScene::6677282588205677074::1759052302::0::1::::<><><>0<>0<><>::
+::res://Assets/::1759050300
 attack animation.png::CompressedTexture2D::4553841579829454151::1759020959::1759037753::1::::<><><>0<>0<>d7f9ac16913e8eb09f93281c117c00d0<>res://.godot/imported/attack animation.png-53230a6ad5b5fc679545b228d0234886.ctex::
 bad guy easy.png::CompressedTexture2D::2595225092037585032::1759014467::1759014863::1::::<><><>0<>0<>9003cef6bb931aa61f0899da8f9f6989<>res://.godot/imported/bad guy easy.png-4a73901f229295f366ed1ee95adbe9ef.ctex::
 bad guy hard.png::CompressedTexture2D::6239654688729194945::1759014467::1759014863::1::::<><><>0<>0<>e7a4a5056bc5d7ac6c531e18153b50e1<>res://.godot/imported/bad guy hard.png-913c67763934c9820b24660e168390ee.ctex::
@@ -21,14 +22,18 @@ spr_torch.png::CompressedTexture2D::5304278007985824041::1563488620::1759014623:
 Tilesetv3.png::CompressedTexture2D::3828175469754284967::1563488888::1759014623::1::::<><><>0<>0<>65a2b1838bbcea6b397488474c898c1f<>res://.godot/imported/Tilesetv3.png-a0a5e81e846e19473dbb8ac08d095d30.ctex::
 time bar.png::CompressedTexture2D::4381666468825952761::1759014467::1759014863::1::::<><><>0<>0<>9634c65d7ca39297b6dc4369b59e222e<>res://.godot/imported/time bar.png-32ce4a239a0b5f30a479cf20970254ca.ctex::
 Unknown.jpeg::CompressedTexture2D::1114884325656889435::1759050294::1759050295::1::::<><><>0<>0<>800b1b141a6e3c5c130c21804559a5f2<>res://.godot/imported/Unknown.jpeg-8793f37f0c5ba48d33d7f4b3faec8b57.ctex::
-::res://Scenes/::1759050129
+::res://Rooms/::1759052305
+Room #4.tscn::PackedScene::3284916160193441823::1759052323::0::1::::<><><>0<>0<><>::
+Room #1.tscn::PackedScene::40036481525515010::1759052053::0::1::::<><><>0<>0<><>::
+Room #2.tscn::PackedScene::8447907039996174987::1759052069::0::1::::<><><>0<>0<><>::
+::res://Scenes/::1759051441
 battery_drain.tres::SpriteFrames::5691625541223752233::1759042322::0::1::::<><><>0<>0<><>::uid://b3orn28554tkr::::res://Assets/time bar.png
 battery_drain.tscn::PackedScene::1893968591767865693::1759037810::0::1::::<><><>0<>0<><>::uid://b3orn28554tkr::::res://Assets/time bar.png
 enemy.tscn::PackedScene::6928541439491603775::1759044110::0::1::::<><><>0<>0<><>::uid://b1f5i4grgisvb::::res://Scripts/enemy.gd<>uid://bc8e8ixgsn8wq::::res://Assets/bad guy easy.png
-game.tscn::PackedScene::9179887345559707024::1759050126::0::1::::<><><>0<>0<><>::uid://ceqqvcxqq1alt::::res://Scripts/game.gd<>uid://boa1vxvn8kvh4::::res://Scenes/player.tscn<>uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c272gm0d263gg::::res://Assets/Normal.wav<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+game.tscn::PackedScene::9179887345559707024::1759051436::0::1::::<><><>0<>0<><>::uid://ceqqvcxqq1alt::::res://Scripts/game.gd<>uid://boa1vxvn8kvh4::::res://Scenes/player.tscn<>uid://p5b8ne3nqrcd::::res://Assets/Unknown.jpeg<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c272gm0d263gg::::res://Assets/Normal.wav<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
 player.tscn::PackedScene::3370681879222608543::1759042666::0::1::::<><><>0<>0<><>::uid://omjdt5236iic::::res://Scripts/player.gd<>uid://cma8qrkumm2v7::::res://Assets/idle position.png<>uid://b546dt7nbt5tb::::res://Assets/attack animation.png<>uid://dyyp8fclj4rm2::::res://player_animation.gd
-::res://Scripts/::1759049468
+::res://Scripts/::1759051013
 enemy.gd::GDScript::4223489836413211859::1759046339::0::1::::<>CharacterBody2D<><>0<>0<><>::
-game.gd::GDScript::5087635900886126617::1759049464::0::1::::<>Node2D<><>0<>0<><>::
+game.gd::GDScript::5087635900886126617::1759051009::0::1::::<>Node2D<><>0<>0<><>::
 GameManager.gd::GDScript::7704528058671498926::1759042322::0::1::::<>Node<><>0<>0<><>::
 player.gd::GDScript::1007969199850970570::1759046764::0::1::::<>CharacterBody2D<><>0<>0<><>::

@@ -929,6 +929,8 @@ position_smoothing_speed = 3.0
 
 [node name="Enemy" parent="." instance=ExtResource("4_wowpa")]
 position = Vector2(232, 112)
+collision_layer = 1
+collision_mask = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-6, 1)

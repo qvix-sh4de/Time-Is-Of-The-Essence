@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://mt2dhglo1g20"]
+
+[ext_resource type="Texture2D" uid="uid://p5b8ne3nqrcd" path="res://Assets/Unknown.jpeg" id="1_d7m6f"]
+[ext_resource type="Texture2D" uid="uid://busnqxh26d3pr" path="res://Assets/Tilesetv3.png" id="2_cp2i2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c8ync"]
+texture = ExtResource("2_cp2i2")
+12:30/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qekgp"]
+sources/0 = SubResource("TileSetAtlasSource_c8ync")
+
+[node name="Room#16" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(-8.999992, -13.999939)
+scale = Vector2(27.127981, 16.937109)
+texture = ExtResource("1_d7m6f")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Layer0" type="TileMapLayer" parent="ParallaxBackground/ParallaxLayer"]
+use_parent_material = true
+tile_set = SubResource("TileSet_qekgp")
