@@ -911,4 +911,5 @@ tile_set = SubResource("TileSet_dbl82")
 [node name="Layer2" type="TileMapLayer" parent="."]
 use_parent_material = true
 position = Vector2(59, 73)
+tile_map_data = PackedByteArray(0, 0, 13, 1, 91, 0, 0, 0, 9, 0, 16, 0, 0, 0)
 tile_set = SubResource("TileSet_dbl82")
