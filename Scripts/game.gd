@@ -76,9 +76,14 @@ func setup_ui():
 	ui_container.add_child(enemy_label)
 	
 func _process(delta):
-	# Countdown timer
 	if is_game_running and game_time > 0:
 		game_time -= delta
+		
+		# Clean up floating point issues every frame
+		game_time = max(0.0, game_time)
+		if game_time < 0.01:  # Very close to zero
+			game_time = 0.0
+		
 		update_ui()
 		
 		if game_time <= 0:
@@ -111,13 +116,20 @@ func apply_time_penalty(penalty_type: String):
 		_:
 			penalty = 5.0
 	
-	game_time = max(0.0, game_time - penalty)
+	# More aggressive floating point fix
+	game_time -= penalty
+	game_time = max(0.0, game_time)
 	
-	# Fix floating point precision issues by rounding to 1 decimal place
-	game_time = round(game_time * 10.0) / 10.0
+	# Round to nearest tenth and ensure clean values
+	game_time = floorf(game_time * 10.0) / 10.0
+	
+	# Force to zero if very close to zero
+	if game_time < 0.1:
+		game_time = 0.0
 	
 	flash_timer()
 	print("Time penalty: -%.1fs | Remaining: %.1fs" % [penalty, game_time])
+	
 func enemy_defeated():
 	enemies_defeated += 1
 	bounce_enemy_counter()
