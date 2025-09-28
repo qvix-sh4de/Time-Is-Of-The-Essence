@@ -1,6 +1,6 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1759018183
-::res://Assets/::1759018221
+::res://::1759020763
+::res://Assets/::1759020546
 bad guy easy.png::CompressedTexture2D::2595225092037585032::1759014467::1759014863::1::::<><><>0<>0<>9003cef6bb931aa61f0899da8f9f6989<>res://.godot/imported/bad guy easy.png-4a73901f229295f366ed1ee95adbe9ef.ctex::
 bad guy hard.png::CompressedTexture2D::6239654688729194945::1759014467::1759014863::1::::<><><>0<>0<>e7a4a5056bc5d7ac6c531e18153b50e1<>res://.godot/imported/bad guy hard.png-913c67763934c9820b24660e168390ee.ctex::
 bad guy medium.png::CompressedTexture2D::2798069480972602918::1759014467::1759014863::1::::<><><>0<>0<>ef22cb1bf90247ba9f2eb892de41685e<>res://.godot/imported/bad guy medium.png-987b33e21343fb091399197b5f586929.ctex::
@@ -12,12 +12,13 @@ icon.svg::CompressedTexture2D::1354375255165979247::1758996954::1759014863::1:::
 idle position.png::CompressedTexture2D::5617140633776607094::1759014467::1759014863::1::::<><><>0<>0<>ed6eba0643dbffdf522384dad0c299b7<>res://.godot/imported/idle position.png-30b3a00730cd14c2d0d8235eab4c6e96.ctex::
 main character attack 1.png::CompressedTexture2D::7211095911961254559::1759014467::1759014863::1::::<><><>0<>0<>fe2c8329e23b1614f5816fcdb4e75490<>res://.godot/imported/main character attack 1.png-fe4fa0f7e84c8006a0ed1f85e8f4912e.ctex::
 medium enemy with healthbar.png::CompressedTexture2D::4745519848072798984::1759014467::1759014863::1::::<><><>0<>0<>d5f33a0e6997b122c8cbaeeacdc50413<>res://.godot/imported/medium enemy with healthbar.png-cff2e99e718c638235a36a556d4230b1.ctex::
-Normal.wav::AudioStreamWAV::6735650976385063690::1759018221::1759018222::1::::<><><>0<>0<>46353469e048d4a7b37076e0f4879aca<>res://.godot/imported/Normal.wav-5803d3c92569311c504c041d4b35dd54.sample::
+Normal.wav::AudioStreamWAV::6735650976385063690::1759018221::1759020888::1::::<><><>0<>0<>f72ac01b8865bf716a33098aa88cd0c8<>res://.godot/imported/Normal.wav-5803d3c92569311c504c041d4b35dd54.sample::
 spr_torch.png::CompressedTexture2D::5304278007985824041::1563488620::1759014623::1::::<><><>0<>0<>55c5015abfb154a120f1544fdcd05f92<>res://.godot/imported/spr_torch.png-bf790e073a99691fd2dbe4683257844c.ctex::
 Tilesetv3.png::CompressedTexture2D::3828175469754284967::1563488888::1759014623::1::::<><><>0<>0<>65a2b1838bbcea6b397488474c898c1f<>res://.godot/imported/Tilesetv3.png-a0a5e81e846e19473dbb8ac08d095d30.ctex::
 time bar.png::CompressedTexture2D::4381666468825952761::1759014467::1759014863::1::::<><><>0<>0<>9634c65d7ca39297b6dc4369b59e222e<>res://.godot/imported/time bar.png-32ce4a239a0b5f30a479cf20970254ca.ctex::
-::res://Scenes/::1759016069
-game.tscn::PackedScene::9179887345559707024::1759016069::0::1::::<><><>0<>0<><>::uid://boa1vxvn8kvh4::::res://Scenes/player.tscn<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png
+::res://Scenes/::1759020319
+game.tscn::PackedScene::9179887345559707024::1759020017::0::1::::<><><>0<>0<><>::uid://boa1vxvn8kvh4::::res://Scenes/player.tscn<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c272gm0d263gg::::res://Assets/Normal.wav
 player.tscn::PackedScene::3370681879222608543::1759015307::0::1::::<><><>0<>0<><>::uid://omjdt5236iic::::res://Scripts/player.gd<>uid://cma8qrkumm2v7::::res://Assets/idle position.png
+normal_2.gd::GDScript::2873879429268388279::1759020314::0::1::::<>AudioStreamPlayer2D<><>0<>0<><>::
 ::res://Scripts/::1759016069
 player.gd::GDScript::1007969199850970570::1759016069::0::1::::<>CharacterBody2D<><>0<>0<><>::

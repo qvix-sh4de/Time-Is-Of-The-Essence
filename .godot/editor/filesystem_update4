@@ -2,3 +2,4 @@ res://Scenes/game.tscn
 res://Scenes/player.tscn
 res://Scripts/player.gd
 res://Assets/Normal.band/Output/arrange_screenshot_big.png
+res://Scenes/normal_2.gd
