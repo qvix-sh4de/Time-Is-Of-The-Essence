@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=4 uid="uid://tnnoveqsw0i"]
 
-[ext_resource type="Texture2D" uid="uid://p5b8ne3nqrcd" path="res://Assets/Unknown.jpeg" id="1_4cjw0"]
+[ext_resource type="Texture2D" uid="uid://cgqkbrgwrw37f" path="res://Assets/black-screen-background-4k.png" id="1_r507l"]
 [ext_resource type="Texture2D" uid="uid://busnqxh26d3pr" path="res://Assets/Tilesetv3.png" id="2_r507l"]
 [ext_resource type="PackedScene" uid="uid://c5yichobaxbr8" path="res://Scenes/enemy.tscn" id="3_r507l"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r507l"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cmgoi"]
 texture = ExtResource("2_r507l")
 12:30/0 = 0
 10:0/0 = 0
@@ -13,9 +13,9 @@ texture = ExtResource("2_r507l")
 13:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_sapm2"]
-sources/0 = SubResource("TileSetAtlasSource_r507l")
+sources/0 = SubResource("TileSetAtlasSource_cmgoi")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cmgoi"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sapm2"]
 texture = ExtResource("2_r507l")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.2815647, 1.4838333, -4.6988087, 0, -3.2149734, -1.3849125, 0.64299583, -2.769825, 3.2149754, -2.374136, 5.1934223, -0.395689, 8, 3.6601238, 8, 7.122404, 8, 8, -9.743846, 7.8148613, -8, 3.7590466)
@@ -885,7 +885,7 @@ texture = ExtResource("2_r507l")
 
 [sub_resource type="TileSet" id="TileSet_r507l"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_cmgoi")
+sources/0 = SubResource("TileSetAtlasSource_sapm2")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sapm2"]
 size = Vector2(21, 38)
@@ -900,7 +900,7 @@ position = Vector2(0, 2)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(-8.999992, -13.999939)
 scale = Vector2(27.127981, 16.937109)
-texture = ExtResource("1_4cjw0")
+texture = ExtResource("1_r507l")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(10, -2)
