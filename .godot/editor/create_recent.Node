@@ -1,7 +1,7 @@
+TileMap
 ParallaxBackground
 ParallaxLayer
 Sprite2D
-TileMap
 Parallax2D
 AnimatedSprite2D
 CharacterBody2D
