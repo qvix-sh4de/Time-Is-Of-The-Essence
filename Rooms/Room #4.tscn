@@ -951,3 +951,78 @@ collision_mask = 16
 position = Vector2(365, -151)
 collision_layer = 16
 collision_mask = 16
+
+[node name="Enemy" parent="." groups=["enemies"] instance=ExtResource("3_ono27")]
+position = Vector2(45, -105)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Enemy2" parent="." groups=["enemies"] instance=ExtResource("3_ono27")]
+position = Vector2(173, -199)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Enemy3" parent="." groups=["enemies"] instance=ExtResource("3_ono27")]
+position = Vector2(365, -151)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Enemy4" parent="." groups=["enemies"] instance=ExtResource("3_ono27")]
+position = Vector2(45, -105)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Enemy5" parent="." groups=["enemies"] instance=ExtResource("3_ono27")]
+position = Vector2(173, -199)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Enemy6" parent="." groups=["enemies"] instance=ExtResource("3_ono27")]
+position = Vector2(365, -151)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Enemy7" parent="." groups=["enemies"] instance=ExtResource("3_ono27")]
+position = Vector2(45, -105)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Enemy8" parent="." groups=["enemies"] instance=ExtResource("3_ono27")]
+position = Vector2(173, -199)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Enemy9" parent="." groups=["enemies"] instance=ExtResource("3_ono27")]
+position = Vector2(365, -151)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Enemy10" parent="." groups=["enemies"] instance=ExtResource("3_ono27")]
+position = Vector2(45, -105)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Enemy11" parent="." groups=["enemies"] instance=ExtResource("3_ono27")]
+position = Vector2(173, -199)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Enemy12" parent="." groups=["enemies"] instance=ExtResource("3_ono27")]
+position = Vector2(365, -151)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Enemy13" parent="." groups=["enemies"] instance=ExtResource("3_ono27")]
+position = Vector2(45, -105)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Enemy14" parent="." groups=["enemies"] instance=ExtResource("3_ono27")]
+position = Vector2(173, -199)
+collision_layer = 16
+collision_mask = 16
+
+[node name="Enemy15" parent="." groups=["enemies"] instance=ExtResource("3_ono27")]
+position = Vector2(365, -151)
+collision_layer = 16
+collision_mask = 16
