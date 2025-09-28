@@ -1,4 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
+<<<<<<< Updated upstream
 ::res://::1759069564
 player_animation.gd::GDScript::8894309316799209679::1759042322::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
 Room File Blank.tscn::PackedScene::6677282588205677074::1759059528::0::1::::<><><>0<>0<><>::uid://p5b8ne3nqrcd::::res://Assets/Unknown.jpeg<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
@@ -85,3 +86,61 @@ enemy.gd::GDScript::4223489836413211859::1759063819::0::1::::<>CharacterBody2D<>
 game.gd::GDScript::5087635900886126617::1759066028::0::1::::<>Node2D<><>0<>0<><>::
 GameManager.gd::GDScript::7704528058671498926::1759042322::0::1::::<>Node<><>0<>0<><>::
 player.gd::GDScript::1007969199850970570::1759068052::0::1::::<>CharacterBody2D<><>0<>0<><>::
+=======
+::res://::1759067572
+player_animation.gd::GDScript::8894309316799209679::1759067560::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
+Room File Blank.tscn::PackedScene::6677282588205677074::1759067560::0::1::::<><><>0<>0<><>::uid://p5b8ne3nqrcd::::res://Assets/Unknown.jpeg<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+::res://Assets/::1759067560
+attack animation.png::CompressedTexture2D::4553841579829454151::1759038551::1759038553::1::::<><><>0<>0<>d7f9ac16913e8eb09f93281c117c00d0<>res://.godot/imported/attack animation.png-53230a6ad5b5fc679545b228d0234886.ctex::
+bad guy easy.png::CompressedTexture2D::2595225092037585032::1759024107::1759024107::1::::<><><>0<>0<>9003cef6bb931aa61f0899da8f9f6989<>res://.godot/imported/bad guy easy.png-4a73901f229295f366ed1ee95adbe9ef.ctex::
+bad guy hard.png::CompressedTexture2D::6239654688729194945::1759024107::1759024107::1::::<><><>0<>0<>e7a4a5056bc5d7ac6c531e18153b50e1<>res://.godot/imported/bad guy hard.png-913c67763934c9820b24660e168390ee.ctex::
+bad guy medium.png::CompressedTexture2D::2798069480972602918::1759024107::1759024107::1::::<><><>0<>0<>ef22cb1bf90247ba9f2eb892de41685e<>res://.godot/imported/bad guy medium.png-987b33e21343fb091399197b5f586929.ctex::
+black-screen-background-4k.png::CompressedTexture2D::5227614332189896501::1759067560::1759067560::1::::<><><>0<>0<>ae84677b8da0343b7f7563be3ee171bd<>res://.godot/imported/black-screen-background-4k.png-68afc4f1f329b38b719b099731f4dabc.ctex::
+death animation.png::CompressedTexture2D::7193839183314498808::1759024107::1759024107::1::::<><><>0<>0<>dcc6e8ac8730f3897a9ca39f48f8a80f<>res://.godot/imported/death animation.png-7d7013ebd9a5470bab188c5c1faf9f9a.ctex::
+Dungeon_brick_wall_purple.png.png::CompressedTexture2D::462074575748167567::1759067560::1759067560::1::::<><><>0<>0<>e2b1dcf414a40759ccc68eac2373fce9<>res://.godot/imported/Dungeon_brick_wall_purple.png.png-e6f0137801ccda76f9830c62050ff68a.ctex::
+easy enemy with healthbar.png::CompressedTexture2D::533608042235939840::1759024107::1759024107::1::::<><><>0<>0<>92f922e9f6cb03b66ba98b4c1512b6b2<>res://.godot/imported/easy enemy with healthbar.png-b54cb9347f389071f0738b68ddca6123.ctex::
+game over.png::CompressedTexture2D::7657838116360577220::1759024107::1759024107::1::::<><><>0<>0<>7fc200ee9508aa25100aa2b8dd01c3ad<>res://.godot/imported/game over.png-a96f829e7b619bba0d5ab8905a25f72d.ctex::
+hard enemy with healthbar.png::CompressedTexture2D::6873302214359003048::1759024107::1759024107::1::::<><><>0<>0<>998fb0e928d08e5594983707cfe2a6c9<>res://.godot/imported/hard enemy with healthbar.png-aabece461387b93f80b64144ea8447d0.ctex::
+icon.svg::CompressedTexture2D::1354375255165979247::1759024107::1759024107::1::::<><><>0<>0<>bb1b6199993d34c936d59b4bb2cd6ba1<>res://.godot/imported/icon.svg-8193eb3d66a1b5143b8bb4c28c1dc139.ctex::
+idle position.png::CompressedTexture2D::5617140633776607094::1759024107::1759024107::1::::<><><>0<>0<>ed6eba0643dbffdf522384dad0c299b7<>res://.godot/imported/idle position.png-30b3a00730cd14c2d0d8235eab4c6e96.ctex::
+main character attack 1.png::CompressedTexture2D::7211095911961254559::1759024107::1759024107::1::::<><><>0<>0<>fe2c8329e23b1614f5816fcdb4e75490<>res://.godot/imported/main character attack 1.png-fe4fa0f7e84c8006a0ed1f85e8f4912e.ctex::
+medium enemy with healthbar.png::CompressedTexture2D::4745519848072798984::1759024107::1759024107::1::::<><><>0<>0<>d5f33a0e6997b122c8cbaeeacdc50413<>res://.godot/imported/medium enemy with healthbar.png-cff2e99e718c638235a36a556d4230b1.ctex::
+Normal.wav::AudioStreamWAV::6735650976385063690::1759024108::1759024109::1::::<><><>0<>0<>f72ac01b8865bf716a33098aa88cd0c8<>res://.godot/imported/Normal.wav-5803d3c92569311c504c041d4b35dd54.sample::
+spr_torch.png::CompressedTexture2D::5304278007985824041::1759024108::1759024108::1::::<><><>0<>0<>55c5015abfb154a120f1544fdcd05f92<>res://.godot/imported/spr_torch.png-bf790e073a99691fd2dbe4683257844c.ctex::
+Tilesetv3.png::CompressedTexture2D::3828175469754284967::1759024108::1759024108::1::::<><><>0<>0<>65a2b1838bbcea6b397488474c898c1f<>res://.godot/imported/Tilesetv3.png-a0a5e81e846e19473dbb8ac08d095d30.ctex::
+time bar.png::CompressedTexture2D::4381666468825952761::1759024108::1759024108::1::::<><><>0<>0<>9634c65d7ca39297b6dc4369b59e222e<>res://.godot/imported/time bar.png-32ce4a239a0b5f30a479cf20970254ca.ctex::
+Unknown.jpeg::CompressedTexture2D::1114884325656889435::1759067560::1759067560::1::::<><><>0<>0<>800b1b141a6e3c5c130c21804559a5f2<>res://.godot/imported/Unknown.jpeg-8793f37f0c5ba48d33d7f4b3faec8b57.ctex::
+::res://Rooms/::1759067560
+Room #1.tscn::PackedScene::40036481525515010::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #2.tscn::PackedScene::8447907039996174987::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #3.tscn::PackedScene::3284916160193441823::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #4.tscn::PackedScene::5493541209467428259::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #5.tscn::PackedScene::6417374961705207991::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #6.tscn::PackedScene::6247172432977236373::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #7.tscn::PackedScene::7170485353649187718::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #8.tscn::PackedScene::2003892041717075530::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #9.tscn::PackedScene::6648092189728501767::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #10.tscn::PackedScene::7193309266877465352::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #11.tscn::PackedScene::265594911179766411::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #12.tscn::PackedScene::4253702571780284272::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #13.tscn::PackedScene::6429759058807144268::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #14.tscn::PackedScene::1124066709214115688::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #15.tscn::PackedScene::6166128887540615598::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #16.tscn::PackedScene::883134394621739223::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #17.tscn::PackedScene::8145185466621561829::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #18.tscn::PackedScene::1259048184311149894::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #19.tscn::PackedScene::1323971956044441224::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #20.tscn::PackedScene::5761817162193968973::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png<>uid://c5yichobaxbr8::::res://Scenes/enemy.tscn
+Room #21.tscn::PackedScene::4489919214344145764::1759067560::0::1::::<><><>0<>0<><>::uid://cgqkbrgwrw37f::::res://Assets/black-screen-background-4k.png<>uid://busnqxh26d3pr::::res://Assets/Tilesetv3.png
+::res://Scenes/::1759067560
+battery_drain.tres::SpriteFrames::5691625541223752233::1759038552::0::1::::<><><>0<>0<><>::uid://b3orn28554tkr::::res://Assets/time bar.png
+battery_drain.tscn::PackedScene::1893968591767865693::1759067560::0::1::::<><><>0<>0<><>::uid://b3orn28554tkr::::res://Assets/time bar.png
+enemy.tscn::PackedScene::6928541439491603775::1759067560::0::1::::<><><>0<>0<><>::uid://b1f5i4grgisvb::::res://Scripts/enemy.gd<>uid://bc8e8ixgsn8wq::::res://Assets/bad guy easy.png
+game.tscn::PackedScene::9179887345559707024::1759067560::0::1::::<><><>0<>0<><>::uid://ceqqvcxqq1alt::::res://Scripts/game.gd<>uid://boa1vxvn8kvh4::::res://Scenes/player.tscn
+player.tscn::PackedScene::3370681879222608543::1759067560::0::1::::<><><>0<>0<><>::uid://omjdt5236iic::::res://Scripts/player.gd<>uid://cma8qrkumm2v7::::res://Assets/idle position.png<>uid://b546dt7nbt5tb::::res://Assets/attack animation.png<>uid://dyyp8fclj4rm2::::res://player_animation.gd
+::res://Scripts/::1759067560
+enemy.gd::GDScript::4223489836413211859::1759067560::0::1::::<>CharacterBody2D<><>0<>0<><>::
+game.gd::GDScript::5087635900886126617::1759067560::0::1::::<>Node2D<><>0<>0<><>::
+GameManager.gd::GDScript::7704528058671498926::1759038551::0::1::::<>Node<><>0<>0<><>::
+player.gd::GDScript::1007969199850970570::1759067560::0::1::::<>CharacterBody2D<><>0<>0<><>::
+>>>>>>> Stashed changes
