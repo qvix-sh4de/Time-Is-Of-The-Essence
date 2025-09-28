@@ -6,3 +6,5 @@ res://Scenes/game.tscn
 res://enemy.gd
 res://enemy.tscn
 res://main.gd
+res://Scripts/main.gd
+res://Scenes/battery_drain.tres

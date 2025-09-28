@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://442v3jolrobb"]
 
-[ext_resource type="Script" uid="uid://cuyos1q88najh" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Script" uid="uid://cuyos1q88najh" path="res://Scenes/enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://bc8e8ixgsn8wq" path="res://Assets/bad guy easy.png" id="2_4gyqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]

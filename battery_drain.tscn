@@ -1,0 +1,149 @@
+[gd_scene load_steps=22 format=3 uid="uid://18pnehd4r1wr"]
+
+[ext_resource type="Texture2D" uid="uid://b3orn28554tkr" path="res://Assets/time bar.png" id="1_bijhp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdsus"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4oru"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idstn"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jxn0"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sd13"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vi8e"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfsl8"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxoxx"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7ohq"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbhu0"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u515l"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s5hm"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(384, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukxco"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4a71"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3fsu"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(256, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbscp"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(384, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgl7y"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(0, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b3rt"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(128, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdd4a"]
+atlas = ExtResource("1_bijhp")
+region = Rect2(256, 512, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_78ki2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdsus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4oru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idstn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jxn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sd13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vi8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfsl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxoxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7ohq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbhu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u515l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s5hm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukxco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4a71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3fsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbscp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgl7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b3rt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdd4a")
+}],
+"loop": true,
+"name": &"battery_drain",
+"speed": 1.0
+}]
+
+[node name="battery_drain" type="AnimatedSprite2D"]
+position = Vector2(-34, -41)
+sprite_frames = SubResource("SpriteFrames_78ki2")
+animation = &"battery_drain"
