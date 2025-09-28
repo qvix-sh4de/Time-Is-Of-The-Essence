@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 res://Scenes/game.tscn
 res://Scripts/game.gd
 res://Room File Blank.tscn
@@ -26,3 +27,6 @@ res://Scripts/enemy.gd
 res://Scenes/player.tscn
 res://Assets/tileset.tres
 res://Rooms/Room #21.tscn
+=======
+res://Rooms/Room #6.tscn
+>>>>>>> Stashed changes
