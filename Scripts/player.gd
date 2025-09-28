@@ -1,5 +1,5 @@
 # player.gd
-# Complete robot player with combat and time penalties
+# Complete robot player with combat, time penalties, and reset functionality
 extends CharacterBody2D
 
 # Movement settings
@@ -12,6 +12,9 @@ extends CharacterBody2D
 var is_invincible: bool = false
 var invincibility_time: float = 1.0
 
+# Reset functionality
+var starting_position: Vector2
+
 # References
 var main_game: Node2D
 @onready var animated_sprite = $AnimatedSprite2D
@@ -20,6 +23,10 @@ var main_game: Node2D
 
 func _ready():
 	add_to_group("player")
+	
+	# Store starting position
+	starting_position = global_position
+	print("Player starting position stored: ", starting_position)
 	
 	# Find main game node
 	main_game = get_node("/root/Game")
@@ -81,14 +88,11 @@ func attack():
 	
 	for enemy in enemies:
 		var distance = global_position.distance_to(enemy.global_position)
-		print("Distance to enemy: ", distance)
 		
 		if distance < 80:  # Attack range
 			print("ENEMY HIT!")
 			if enemy.has_method("take_damage"):
 				enemy.take_damage(1)
-			else:
-				print("Enemy missing take_damage method")
 
 func special_action():
 	print("Robot special action!")
@@ -97,8 +101,6 @@ func special_action():
 	if main_game and main_game.has_method("apply_time_penalty"):
 		main_game.apply_time_penalty("special")
 		print("Special action cost 3 seconds!")
-	
-	# Add special action effects here (dash, shield, etc.)
 
 func take_hit(damage_source: String = "enemy"):
 	if is_invincible:
@@ -117,6 +119,22 @@ func take_hit(damage_source: String = "enemy"):
 	
 	# Visual feedback
 	_show_hit_effect()
+
+func reset_to_start():
+	global_position = starting_position
+	velocity = Vector2.ZERO
+	is_invincible = false
+	
+	# Reset visual effects
+	if animated_sprite:
+		animated_sprite.modulate = Color.WHITE
+		animated_sprite.flip_h = false
+	
+	# Stop timers
+	if hit_timer:
+		hit_timer.stop()
+	
+	print("Player reset to starting position: ", starting_position)
 
 func _show_hit_effect():
 	# Flash red

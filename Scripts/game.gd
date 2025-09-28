@@ -1,5 +1,5 @@
 # game.gd
-# Complete Robot Time Attack Game
+# Complete Robot Time Attack Game with reset functionality
 extends Node2D
 
 # Game state variables
@@ -146,12 +146,34 @@ func next_level():
 	print("LEVEL %d START!" % current_level)
 	print("Time limit: %.1fs" % game_time)
 	print("Required enemies: %d" % required_enemies)
+	
+	# Reset all entities to starting positions
+	reset_all_entities()
 
 func restart_level():
 	enemies_defeated = 0
 	level_start_time = max(60.0, 120.0 - (current_level - 1) * 3.0)
 	game_time = level_start_time
 	is_game_running = true
+	
+	# Reset all entities to starting positions
+	reset_all_entities()
+
+func reset_all_entities():
+	# Reset player to starting position
+	var player = get_tree().get_first_node_in_group("player")
+	if player and player.has_method("reset_to_start"):
+		player.reset_to_start()
+	
+	# Reset all enemies to starting positions
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	print("Resetting ", enemies.size(), " enemies to starting positions")
+	
+	for enemy in enemies:
+		if enemy.has_method("reset_to_start"):
+			enemy.reset_to_start()
+	
+	print("All entities reset to starting positions!")
 
 func game_over():
 	is_game_running = false
