@@ -652,8 +652,12 @@ func apply_time_penalty(penalty_type: String):
 			penalty_amount = 5
 		"attack":
 			penalty_amount = 5
+		"shield":
+			penalty_amount = 10  # NEW: E key shield ability
+		"powerup":
+			penalty_amount = 5   # NEW: G key power-up ability
 		"special":
-			penalty_amount = 3
+			penalty_amount = 3   # Legacy
 	
 	game_time = max(0, game_time - penalty_amount)
 	print("Time penalty: -", penalty_amount, "s. Remaining: ", game_time, "s")

@@ -102,7 +102,7 @@ func attack_player():
 
 func take_damage(amount: int = 1):
 	health -= amount
-	print("Enemy takes damage! Health remaining: ", health)
+	print("Enemy takes ", amount, " damage! Health remaining: ", health)
 	
 	# Visual feedback for taking damage
 	flash_red()
