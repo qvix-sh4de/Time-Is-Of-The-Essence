@@ -518,17 +518,3 @@ func update_battery_display() -> void:
 			battery_sprite.pause()
 			battery_sprite.frame = frame_index
 			
-func _process_texture(delta):
-	update_character_texture()
-
-func update_character_texture():
-	var battery = get_battery_percentage()
-
-	if battery <= 10:
-		$AnimatedSprite2D.play("rusty")
-	elif battery <= 25:
-		$AnimatedSprite2D.play("crusty")
-	elif battery <= 50:
-		$AnimatedSprite2D.play("dusty")
-	else:
-		$AnimatedSprite2D.play("clean")
