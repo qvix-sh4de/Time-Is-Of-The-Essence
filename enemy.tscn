@@ -1,18 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://442v3jolrobb"]
 
 [ext_resource type="Script" uid="uid://cuyos1q88najh" path="res://enemy.gd" id="1_4gyqm"]
-[ext_resource type="PackedScene" uid="uid://c337uy4js50sm" path="res://Scenes/enemy_2d.tscn" id="2_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://bc8e8ixgsn8wq" path="res://Assets/bad guy easy.png" id="2_4gyqm"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qi2p4"]
-radius = 5.0
-height = 26.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
+size = Vector2(6, 20)
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(328, 278)
-shape = SubResource("CapsuleShape2D_qi2p4")
+position = Vector2(-7, -26)
+shape = SubResource("RectangleShape2D_4gyqm")
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("2_4gyqm")]
-position = Vector2(334, 304)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4gyqm")

@@ -16,6 +16,7 @@ var enemy_label: Label
 var ui_container: CanvasLayer
 
 func _ready():
+	$Enemy.terget = $Player
 	setup_ui()
 	print("🤖 === ROBOT TIME ATTACK GAME ===")
 	print("Arrow Keys = Move robot")
