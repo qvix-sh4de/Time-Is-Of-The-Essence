@@ -941,13 +941,3 @@ shape = SubResource("RectangleShape2D_sapm2")
 position = Vector2(45, -105)
 collision_layer = 16
 collision_mask = 16
-
-[node name="Enemy2" parent="Layer3/RoomExit" groups=["enemies"] instance=ExtResource("3_r507l")]
-position = Vector2(173, -199)
-collision_layer = 16
-collision_mask = 16
-
-[node name="Enemy3" parent="Layer3/RoomExit" groups=["enemies"] instance=ExtResource("3_r507l")]
-position = Vector2(365, -151)
-collision_layer = 16
-collision_mask = 16

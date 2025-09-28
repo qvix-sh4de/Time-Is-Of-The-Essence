@@ -76,7 +76,6 @@ func setup_ui() -> void:
 	battery_label.text = "BATTERY: 100%"
 	ui_canvas.add_child(battery_label)
 	
-
 	
 	battery_sprite = AnimatedSprite2D.new()
 	battery_sprite.name = "BatterySprite"
@@ -219,7 +218,7 @@ func create_simple_fallback_room() -> void:
 
 func count_enemies_in_room() -> void:
 	var custom_enemy_requirements = {
-		1: 3, 2: 3, 3: 4, 4: 5, 5: 6,
+		1: 1, 2: 3, 3: 4, 4: 5, 5: 6,
 		6: 6, 7: 7, 8: 8, 9: 3, 10: 8,
 		11: 8, 12: 10, 13: 10, 14: 5, 15: 10,
 		16: 10, 17: 10, 18: 15, 19: 15, 20: 15
