@@ -15,6 +15,12 @@ run/main_scene="uid://d312nyktjs0ue"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
+[global_group]
+
+player_spawn=""
+room_exits=""
+enemies=""
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

@@ -1,267 +1,403 @@
-# game.gd
-# Complete Robot Time Attack Game with reset functionality
+# Game.gd - Complete Fixed Game Manager
 extends Node2D
 
-# Game state variables
-var current_level: int = 1
-var game_time: float = 120.0
-var enemies_defeated: int = 0
-var required_enemies: int = 2
-var is_game_running: bool = true
-var level_start_time: float = 120.0
+# Game state
+var current_room: int = 1
+var total_rooms: int = 20
+var game_time: float = 120.0  # 2 minutes per room
+var max_time: float = 120.0
+var is_game_active: bool = false
+
+# Room management
+var current_room_node: Node2D
+var player: CharacterBody2D
+var enemies_defeated_this_room: int = 0
+var required_enemies_this_room: int = 0
 
 # UI elements
 var time_label: Label
-var level_label: Label
 var enemy_label: Label
-var ui_container: CanvasLayer
+var room_label: Label
 var battery_sprite: AnimatedSprite2D
 
+# Enemy manager
+var enemy_manager: Node
+
 func _ready():
-	print("Robot Time Attack Game Starting...")
-	level_start_time = game_time
 	setup_ui()
-	print("=== CONTROLS ===")
-	print("Arrow Keys = Move robot")
-	print("Space = Jump")
-	print("F = Attack (costs 5 seconds)")
-	print("G = Special Action (costs 3 seconds)")
-	print("T = Test time penalty")
-	print("E = Test enemy defeat")
-	print("R = Restart level")
-	print("================")
+	setup_enemy_manager()
+	start_game()
 
 func setup_ui():
-	# Prevent duplicate UI
-	if ui_container != null:
+	# Create UI Canvas
+	var canvas = CanvasLayer.new()
+	canvas.name = "UI"
+	add_child(canvas)
+	
+	# Time display
+	time_label = Label.new()
+	time_label.position = Vector2(20, 20)
+	time_label.add_theme_font_size_override("font_size", 24)
+	time_label.text = "Time: 02:00"
+	canvas.add_child(time_label)
+	
+	# Enemy counter
+	enemy_label = Label.new()
+	enemy_label.position = Vector2(20, 50)
+	enemy_label.add_theme_font_size_override("font_size", 20)
+	enemy_label.text = "Enemies: 0/0"
+	canvas.add_child(enemy_label)
+	
+	# Room display
+	room_label = Label.new()
+	room_label.position = Vector2(20, 80)
+	room_label.add_theme_font_size_override("font_size", 20)
+	room_label.text = "Room: 1/20"
+	canvas.add_child(room_label)
+	
+	# Battery display
+	battery_sprite = AnimatedSprite2D.new()
+	battery_sprite.name = "BatterySprite"
+	battery_sprite.position = Vector2(300, 50)
+	battery_sprite.scale = Vector2(2, 2)
+	canvas.add_child(battery_sprite)
+
+func setup_enemy_manager():
+	# Create enemy manager
+	enemy_manager = Node.new()
+	enemy_manager.name = "EnemyManager"
+	add_child(enemy_manager)
+	
+	# Add enemy manager script
+	var enemy_manager_script = GDScript.new()
+	enemy_manager_script.source_code = """
+extends Node
+
+signal all_enemies_defeated
+
+var total_enemies: int = 0
+var enemies_alive: int = 0
+
+func count_enemies():
+	var enemy_nodes = get_tree().get_nodes_in_group("enemies")
+	total_enemies = enemy_nodes.size()
+	enemies_alive = total_enemies
+	
+	for enemy in enemy_nodes:
+		if enemy.has_signal("enemy_died"):
+			enemy.connect("enemy_died", _on_enemy_died)
+
+func _on_enemy_died():
+	enemies_alive -= 1
+	print("Enemy died! Remaining: ", enemies_alive)
+	
+	if enemies_alive <= 0:
+		print("All enemies defeated!")
+		all_enemies_defeated.emit()
+
+func are_all_enemies_dead() -> bool:
+	return enemies_alive <= 0
+"""
+	enemy_manager.set_script(enemy_manager_script)
+
+func start_game():
+	is_game_active = true
+	current_room = 1
+	game_time = max_time
+	enemies_defeated_this_room = 0
+	
+	# Find player
+	player = get_tree().get_first_node_in_group("player")
+	if not player:
+		print("ERROR: No player found!")
 		return
 	
-	# Create UI overlay
-	ui_container = CanvasLayer.new()
-	add_child(ui_container)
+	# Load first room
+	load_room(current_room)
 	
-	# Battery sprite - scaled 2x larger
-	battery_sprite = AnimatedSprite2D.new()
-	battery_sprite.position = Vector2(60, 70)
-	battery_sprite.scale = Vector2(3.0, 3.0)  # 2x larger than before
-	ui_container.add_child(battery_sprite)
+	print("Game started! Room 1 loaded.")
+
+func load_room(room_number: int):
+	print("Loading Room #", room_number)
 	
-	# Load battery animation
-	var battery_frames = load("res://Scenes/battery_drain.tres")
-	if battery_frames:
-		battery_sprite.sprite_frames = battery_frames
-		print("Battery animation loaded successfully")
+	# Clear current room
+	if current_room_node:
+		current_room_node.queue_free()
+		await get_tree().process_frame
+	
+	# Load room scene
+	var room_scene_path = "res://Rooms/Room #%d.tscn" % room_number
+	
+	if not ResourceLoader.exists(room_scene_path):
+		print("ERROR: Room scene not found: ", room_scene_path)
+		create_fallback_room()
+		return
+	
+	# Load and instance the room
+	var room_scene = load(room_scene_path)
+	current_room_node = room_scene.instantiate()
+	current_room_node.name = "CurrentRoom"
+	add_child(current_room_node)
+	
+	# Wait for everything to load
+	await get_tree().process_frame
+	await get_tree().process_frame
+	
+	# Count enemies and setup room systems
+	count_enemies_in_room()
+	setup_room_exit()
+	reset_player_to_room_start()
+	
+	# Update UI
+	update_ui()
+	
+	print("Room ", room_number, " loaded with ", required_enemies_this_room, " enemies")
+
+func create_fallback_room():
+	# Create a simple fallback room if scene file is missing
+	print("Creating fallback room for room ", current_room)
+	
+	current_room_node = Node2D.new()
+	current_room_node.name = "FallbackRoom"
+	add_child(current_room_node)
+	
+	# Create simple platform
+	var platform = StaticBody2D.new()
+	platform.collision_layer = 2  # Platforms on layer 2
+	platform.collision_mask = 0   # Platforms don't need to detect anything
+	
+	var sprite = ColorRect.new()
+	sprite.color = Color.BROWN
+	sprite.size = Vector2(800, 32)
+	sprite.position = Vector2(-400, 200)
+	var collision = CollisionShape2D.new()
+	var shape = RectangleShape2D.new()
+	shape.size = Vector2(800, 32)
+	collision.shape = shape
+	platform.position = Vector2(0, 200)
+	platform.add_child(sprite)
+	platform.add_child(collision)
+	current_room_node.add_child(platform)
+	
+	# Create player spawn
+	var spawn = Marker2D.new()
+	spawn.name = "PlayerSpawn"
+	spawn.position = Vector2(-300, 150)
+	spawn.add_to_group("player_spawn")
+	current_room_node.add_child(spawn)
+	
+	# Create room exit
+	var exit = Area2D.new()
+	exit.name = "RoomExit" 
+	exit.position = Vector2(300, 150)
+	exit.add_to_group("room_exits")
+	exit.collision_layer = 8  # Exit on layer 4 (bit 4 = value 8)
+	exit.collision_mask = 1   # Detects player (layer 1)
+	var exit_collision = CollisionShape2D.new()
+	var exit_shape = RectangleShape2D.new()
+	exit_shape.size = Vector2(64, 128)
+	exit_collision.shape = exit_shape
+	exit.add_child(exit_collision)
+	current_room_node.add_child(exit)
+	
+	required_enemies_this_room = 0
+	setup_room_exit()
+	reset_player_to_room_start()
+
+func count_enemies_in_room():
+	# Count all enemies in the current room
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	required_enemies_this_room = 0
+	enemies_defeated_this_room = 0
+	
+	for enemy in enemies:
+		# Check if enemy is a child of current room
+		if current_room_node.is_ancestor_of(enemy):
+			required_enemies_this_room += 1
+	
+	# Update enemy manager
+	if enemy_manager and enemy_manager.has_method("count_enemies"):
+		enemy_manager.count_enemies()
+	
+	print("Found ", required_enemies_this_room, " enemies in room")
+
+func setup_room_exit():
+	# Find and connect room exits
+	var exits = get_tree().get_nodes_in_group("room_exits")
+	for exit in exits:
+		if current_room_node.is_ancestor_of(exit) and exit is Area2D:
+			if not exit.body_entered.is_connected(_on_room_exit_entered):
+				exit.body_entered.connect(_on_room_exit_entered)
+			print("Connected to room exit")
+
+func reset_player_to_room_start():
+	var spawn_points = get_tree().get_nodes_in_group("player_spawn")
+	
+	print("=== PLAYER SPAWN DEBUG ===")
+	print("Spawn points found: ", spawn_points.size())
+	print("Player found: ", player != null)
+	
+	if player and spawn_points.size() > 0:
+		var spawn_pos = spawn_points[0].global_position
+		print("Teleporting player to: ", spawn_pos)
+		
+		if player.has_method("teleport_to_position"):
+			player.teleport_to_position(spawn_pos)
+		else:
+			player.global_position = spawn_pos
+			player.velocity = Vector2.ZERO
+		
+		if player.has_method("reset_player_state"):
+			player.reset_player_state()
+			
+		print("Player positioned at: ", player.global_position)
 	else:
-		print("No battery animation found - using timer only")
+		print("ERROR: Missing spawn point or player!")
+	print("=========================")
+
+func _on_room_exit_entered(body):
+	if not body.is_in_group("player"):
+		return
 	
-	# Timer display - 2x larger font
-	time_label = Label.new()
-	time_label.position = Vector2(200, 40)
-	time_label.add_theme_font_size_override("font_size", 56)  # 2x larger
-	time_label.text = "02:00"
-	ui_container.add_child(time_label)
+	if not all_enemies_defeated():
+		print("Cannot exit room - ", get_remaining_enemy_count(), " enemies remaining!")
+		flash_enemy_counter()
+		return
 	
-	# Level display - 2x larger font
-	level_label = Label.new()
-	level_label.position = Vector2(40, 140)
-	level_label.add_theme_font_size_override("font_size", 40)  # 2x larger
-	level_label.text = "LEVEL: 1/20"
-	ui_container.add_child(level_label)
+	print("Player reached exit with all enemies defeated!")
+	advance_to_next_room()
+
+func get_remaining_enemy_count() -> int:
+	var remaining = 0
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		if current_room_node.is_ancestor_of(enemy):
+			remaining += 1
+	return remaining
+
+func all_enemies_defeated() -> bool:
+	return get_remaining_enemy_count() == 0
+
+func on_enemy_defeated():
+	enemies_defeated_this_room += 1
+	var remaining = get_remaining_enemy_count()
+	print("Enemy defeated! Enemies remaining: ", remaining)
 	
-	# Enemy progress - 2x larger font
-	enemy_label = Label.new()
-	enemy_label.position = Vector2(40, 190)
-	enemy_label.add_theme_font_size_override("font_size", 40)  # 2x larger
-	enemy_label.text = "ENEMIES: 0/2"
-	ui_container.add_child(enemy_label)
+	if all_enemies_defeated():
+		print("🎉 All enemies defeated! Room exit unlocked!")
+		flash_success_message()
 	
+	update_ui()
+
+func flash_enemy_counter():
+	# Flash the enemy counter red when trying to exit with enemies remaining
+	if enemy_label:
+		var tween = create_tween()
+		tween.tween_property(enemy_label, "modulate", Color.RED, 0.2)
+		tween.tween_property(enemy_label, "modulate", Color.WHITE, 0.3)
+
+func flash_success_message():
+	# Flash the enemy counter green when all enemies defeated
+	if enemy_label:
+		var tween = create_tween()
+		tween.tween_property(enemy_label, "modulate", Color.GREEN, 0.2)
+		tween.tween_property(enemy_label, "modulate", Color.WHITE, 0.5)
+
+func advance_to_next_room():
+	if current_room >= total_rooms:
+		complete_game()
+		return
+	
+	current_room += 1
+	game_time = max_time  # Reset timer for new room
+	print("🏃 Advancing to room ", current_room)
+	load_room(current_room)
+
+func complete_game():
+	is_game_active = false
+	print("🎉 CONGRATULATIONS! You completed all ", total_rooms, " rooms!")
+	time_label.text = "GAME COMPLETE!"
+	enemy_label.text = "ALL ROOMS CLEARED!"
+	room_label.text = "VICTORY!"
+
+func apply_time_penalty(penalty_type: String):
+	if not is_game_active:
+		return
+	
+	var penalty_amount = 0
+	match penalty_type:
+		"hit":
+			penalty_amount = 5
+		"attack":
+			penalty_amount = 5  # Attack also costs 5 seconds
+		"special":
+			penalty_amount = 3
+	
+	game_time = max(0, game_time - penalty_amount)
+	print("Time penalty: -", penalty_amount, "s. Remaining: ", game_time, "s")
+	
+	# Flash timer red
+	flash_timer_red()
+	
+	if game_time <= 0:
+		game_over()
+	
+	update_ui()
+
+func flash_timer_red():
+	if time_label:
+		var tween = create_tween()
+		tween.tween_property(time_label, "modulate", Color.RED, 0.1)
+		tween.tween_property(time_label, "modulate", Color.WHITE, 0.3)
+
+func game_over():
+	is_game_active = false
+	print("⏰ GAME OVER! Restarting from Room 1...")
+	time_label.text = "GAME OVER!"
+	await get_tree().create_timer(2.0).timeout
+	start_game()
+
 func _process(delta):
-	if is_game_running and game_time > 0:
+	if is_game_active:
 		game_time -= delta
-		
-		# Clean up floating point issues every frame
-		game_time = max(0.0, game_time)
-		if game_time < 0.01:  # Very close to zero
-			game_time = 0.0
-		
-		update_ui()
 		
 		if game_time <= 0:
 			game_over()
-
-func _input(event):
-	# Test controls and game management
-	if event is InputEventKey and event.pressed:
-		match event.keycode:
-			KEY_T:
-				apply_time_penalty("hit")
-				print("Test: Lost 5 seconds!")
-			KEY_E:
-				enemy_defeated()
-				print("Test: Enemy defeated!")
-			KEY_R:
-				restart_level()
-				print("Level restarted!")
-
-func apply_time_penalty(penalty_type: String):
-	var penalty: float = 0.0
-	
-	match penalty_type:
-		"hit":
-			penalty = 5.0
-		"special":
-			penalty = 3.0
-		"environmental":
-			penalty = 2.0
-		_:
-			penalty = 5.0
-	
-	# More aggressive floating point fix
-	game_time -= penalty
-	game_time = max(0.0, game_time)
-	
-	# Round to nearest tenth and ensure clean values
-	game_time = floorf(game_time * 10.0) / 10.0
-	
-	# Force to zero if very close to zero
-	if game_time < 0.1:
-		game_time = 0.0
-	
-	flash_timer()
-	print("Time penalty: -%.1fs | Remaining: %.1fs" % [penalty, game_time])
-	
-func enemy_defeated():
-	enemies_defeated += 1
-	bounce_enemy_counter()
-	print("Enemy defeated! Progress: %d/%d" % [enemies_defeated, required_enemies])
-	
-	if enemies_defeated >= required_enemies:
-		level_complete()
-
-func level_complete():
-	print("LEVEL %d COMPLETE!" % current_level)
-	print("Bonus points for remaining time: %d" % int(game_time * 10))
-	
-	if current_level >= 20:
-		game_won()
-	else:
-		next_level()
-
-func next_level():
-	current_level += 1
-	enemies_defeated = 0
-	
-	# Increase difficulty - less time each level
-	level_start_time = max(60.0, 120.0 - (current_level - 1) * 3.0)
-	game_time = level_start_time
-	
-	# More enemies required each level
-	required_enemies = 2 + int((current_level - 1) / 3)
-	
-	print("LEVEL %d START!" % current_level)
-	print("Time limit: %.1fs" % game_time)
-	print("Required enemies: %d" % required_enemies)
-	
-	# Reset all entities to starting positions
-	reset_all_entities()
-
-func restart_level():
-	enemies_defeated = 0
-	level_start_time = max(60.0, 120.0 - (current_level - 1) * 3.0)
-	game_time = level_start_time
-	is_game_running = true
-	
-	# Reset all entities to starting positions
-	reset_all_entities()
-
-func reset_all_entities():
-	# Reset player to starting position
-	var player = get_tree().get_first_node_in_group("player")
-	if player and player.has_method("reset_to_start"):
-		player.reset_to_start()
-	
-	# Reset all enemies to starting positions
-	var enemies = get_tree().get_nodes_in_group("enemies")
-	print("Resetting ", enemies.size(), " enemies to starting positions")
-	
-	for enemy in enemies:
-		if enemy.has_method("reset_to_start"):
-			enemy.reset_to_start()
-	
-	print("All entities reset to starting positions!")
-
-func game_over():
-	print("TIME'S UP! Auto-restarting level...")
-	
-	# Auto-restart instead of stopping
-	restart_level()
-	
-	# Brief visual feedback that time ran out
-	if time_label:
-		time_label.modulate = Color.RED
-		var tween = create_tween()
-		tween.tween_property(time_label, "modulate", Color.WHITE, 1.0)
-func game_won():
-	print("CONGRATULATIONS!")
-	print("You completed all 20 levels!")
-	print("You are the ultimate robot!")
+		else:
+			update_ui()
 
 func update_ui():
-	# Update timer display
+	# FIXED: Clean timer display (no decimals)
 	var minutes = int(game_time) / 60
 	var seconds = int(game_time) % 60
-	time_label.text = "%02d:%02d" % [minutes, seconds]
+	time_label.text = "Time: %02d:%02d" % [minutes, seconds]
 	
-	# Calculate time percentage for battery
-	var time_percentage = game_time / level_start_time
-	time_percentage = clamp(time_percentage, 0.0, 1.0)
+	# FIXED: Accurate enemy counter
+	var remaining_enemies = get_remaining_enemy_count()
+	var defeated_enemies = required_enemies_this_room - remaining_enemies
+	enemy_label.text = "Enemies: %d/%d" % [defeated_enemies, required_enemies_this_room]
 	
-	# Update battery animation if available
-	update_battery_animation(time_percentage)
+	# Update room display
+	room_label.text = "Room: %d/%d" % [current_room, total_rooms]
 	
-	# Color coding based on time remaining
-	if time_percentage > 0.5:
-		time_label.modulate = Color.WHITE
-	elif time_percentage > 0.25:
-		time_label.modulate = Color.YELLOW
-	else:
-		time_label.modulate = Color.RED
-	
-	# Update other labels
-	level_label.text = "LEVEL: %d/20" % current_level
-	enemy_label.text = "ENEMIES: %d/%d" % [enemies_defeated, required_enemies]
+	# Update battery animation
+	update_battery_display()
 
-func update_battery_animation(time_percentage: float):
-	if not battery_sprite or not battery_sprite.sprite_frames:
+func update_battery_display():
+	if not battery_sprite:
 		return
 	
-	if not battery_sprite.sprite_frames.has_animation("battery_drain"):
-		return
+	# Calculate time percentage for battery display
+	var time_percentage = game_time / max_time
 	
-	var total_frames = battery_sprite.sprite_frames.get_frame_count("battery_drain")
-	if total_frames == 0:
-		return
-	
-	# Calculate frame (0 = full battery, last frame = empty)
-	var frame_index = int((1.0 - time_percentage) * (total_frames - 1))
-	frame_index = clamp(frame_index, 0, total_frames - 1)
-	
-	# Set animation and frame
-	if battery_sprite.animation != "battery_drain":
-		battery_sprite.play("battery_drain")
-	
-	battery_sprite.pause()
-	battery_sprite.frame = frame_index
-
-func flash_timer():
-	var tween = create_tween()
-	tween.tween_property(time_label, "modulate", Color.RED, 0.1)
-	tween.tween_property(time_label, "modulate", Color.WHITE, 0.3)
-
-func bounce_enemy_counter():
-	var tween = create_tween()
-	tween.tween_property(enemy_label, "scale", Vector2(1.2, 1.2), 0.1)
-	tween.tween_property(enemy_label, "scale", Vector2(1.0, 1.0), 0.1)
-
-func can_complete_level() -> bool:
-	return enemies_defeated >= required_enemies
+	# If you have battery animation loaded
+	if battery_sprite.sprite_frames and battery_sprite.sprite_frames.has_animation("battery_drain"):
+		var total_frames = battery_sprite.sprite_frames.get_frame_count("battery_drain")
+		if total_frames > 0:
+			var frame_index = int((1.0 - time_percentage) * (total_frames - 1))
+			frame_index = clamp(frame_index, 0, total_frames - 1)
+			
+			if battery_sprite.animation != "battery_drain":
+				battery_sprite.play("battery_drain")
+			
+			battery_sprite.pause()
+			battery_sprite.frame = frame_index
